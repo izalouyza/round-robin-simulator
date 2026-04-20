@@ -15,15 +15,15 @@
         <div class="grid">
             <div>
                 <label>Processos</label>
-                <input type="number" id="numProcessos" value="4">
+                <input type="number" id="numProcessos" value="4" min="0">
             </div>
             <div>
                 <label>Quantum</label>
-                <input type="number" id="quantum" value="4">
+                <input type="number" id="quantum" value="4" min="0">
             </div>
             <div>
                 <label>Tempo Total</label>
-                <input type="number" id="tempoTotal" value="50">
+                <input type="number" id="tempoTotal" value="50" min="0">
             </div>
             <div>
                 <label>Velocidade</label>
@@ -51,22 +51,43 @@
     </div>
 
     <div class="card filas">
-        <div><b>CPU:</b> <span id="filaCPU"></span></div>
-        <div><b>Disco:</b> <span id="filaIO"></span></div>
-    </div>
+    <div><b>CPU:</b> <span id="filaCPU"></span></div>
+    <div><b>Disco:</b> <span id="filaIO"></span></div>
+</div>
 
     <div class="card">
         <h2>Simulação</h2>
-        <div id="tempoAtual"></div>
+        <div id="tempoAtual">t = 0</div>
         <h3>CPU</h3>
         <div id="cpuTimeline" class="linha"></div>
         <h3>Disco</h3>
         <div id="ioTimeline" class="linha"></div>
     </div>
 
-    <div class="card">
-        <h2>Resultados</h2>
-        <div id="resultados"></div>
+    <div id="resultados" class="grid-resultados">
+    <div class="resultado-card">
+        <span id="percCPU" class="res-valor">74.00%</span>
+        <span class="res-label">Utilização da CPU</span>
+    </div>
+
+    <div class="resultado-card">
+        <span id="percDisco" class="res-valor">96.00%</span>
+        <span class="res-label">Utilização do Disco</span>
+    </div>
+
+    <div class="resultado-card">
+        <span id="mediaEspera" class="res-valor">12.00</span>
+        <span class="res-label">Espera Média</span>
+    </div>
+
+    <div class="resultado-card">
+        <span id="mediaTurnaround" class="res-valor">51.00</span>
+        <span class="res-label">Turnaround Médio</span>
+    </div>
+
+    <div class="resultado-card">
+        <span id="mediaResposta" class="res-valor">5.25</span>
+        <span class="res-label">Resposta Média</span>
     </div>
 </div>
 
