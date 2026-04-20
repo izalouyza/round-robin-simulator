@@ -94,6 +94,7 @@ round-robin-simulator/
 │   └── style.css
 ├── index.html
 ├── main.js
+├── package-lock.json
 ├── package.json
 └── .gitignore
 ```
