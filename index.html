@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Simulador Round-Robin</title>
+    <link rel="stylesheet" href="src/style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Simulador de Escalonamento Round-Robin</h1>
+
+    <div class="card">
+        <h2>Configuração</h2>
+        <div class="grid">
+            <div>
+                <label>Processos</label>
+                <input type="number" id="numProcessos" value="4">
+            </div>
+            <div>
+                <label>Quantum</label>
+                <input type="number" id="quantum" value="4">
+            </div>
+            <div>
+                <label>Tempo Total</label>
+                <input type="number" id="tempoTotal" value="50">
+            </div>
+            <div>
+                <label>Velocidade</label>
+                <select id="velocidade">
+                    <option value="800">Lento</option>
+                    <option value="300" selected>Médio</option>
+                    <option value="100">Rápido</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="botoes">
+            <button class="sec" onclick="gerarInputs()">Gerar</button>
+            <button class="sec" onclick="carregarModelo()">Modelo Aula</button>
+            <button class="play" onclick="iniciarSimulacao()">Iniciar</button>
+            <button class="pause" onclick="pausar()">Pausar</button>
+            <button class="play" onclick="continuar()">Continuar</button>
+            <button class="step" onclick="passoManual()">Passo</button>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Processos</h2>
+        <div id="processos" class="grid-processos"></div>
+    </div>
+
+    <div class="card filas">
+        <div><b>CPU:</b> <span id="filaCPU"></span></div>
+        <div><b>Disco:</b> <span id="filaIO"></span></div>
+    </div>
+
+    <div class="card">
+        <h2>Simulação</h2>
+        <div id="tempoAtual"></div>
+        <h3>CPU</h3>
+        <div id="cpuTimeline" class="linha"></div>
+        <h3>Disco</h3>
+        <div id="ioTimeline" class="linha"></div>
+    </div>
+
+    <div class="card">
+        <h2>Resultados</h2>
+        <div id="resultados"></div>
+    </div>
+</div>
+
+<script src="src/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+# Configurações do VS Code
+.vscode/
+*.code-workspace
+
+# Ficheiros do Sistema Operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs e ficheiros temporários
+*.log
+npm-debug.log*
+
+# Node.js/npm 
+node_modules/
+dist/
+build/
+
+# Ficheiros de backup ou temporários de editores
+*.swp
+*~
+.bak
+out/
