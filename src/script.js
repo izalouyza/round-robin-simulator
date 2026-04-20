@@ -14,10 +14,8 @@ let tempoTotal = 50;
 let intervalo = null;
 
 function gerarInputs() {
-    let n = parseInt(document.getElementById("numProcessos").value);
+    let n = parseInt(document.getElementById("numProcessos").value) || 0;
     let div = document.getElementById("processos");
-    
-    // Limpa o conteúdo antes de gerar novos para não acumular
     div.innerHTML = ""; 
 
     for (let i = 0; i < n; i++) {
@@ -284,4 +282,32 @@ function atualizarFilas() {
         
         elIO.innerText = textoIO.trim() || "Nenhum";
     }
+
+function resetarInterface() {
+    // 1. Zera os cards de resultados
+    // Certifique-se que esses IDs são os mesmos que estão no seu HTML
+    const ids = ["percCPU", "percDisco", "mediaEspera", "mediaTurnaround", "mediaResposta"];
+    ids.forEach(id => {
+        let el = document.getElementById(id);
+        if (el) {
+            // Se for um dos dois primeiros, coloca %, se não, apenas 0.00
+            el.innerText = (id === "percCPU" || id === "percDisco") ? "0.00%" : "0.00";
+        }
+    });
+
+    // 2. Limpa as timelines e o tempo
+    if (document.getElementById("cpuTimeline")) document.getElementById("cpuTimeline").innerHTML = "";
+    if (document.getElementById("ioTimeline")) document.getElementById("ioTimeline").innerHTML = "";
+    if (document.getElementById("tempoAtual")) document.getElementById("tempoAtual").innerText = "t = 0";
+    
+    // 3. Reseta as barras superiores
+    if (document.getElementById("filaCPU")) document.getElementById("filaCPU").innerText = "Nenhum";
+    if (document.getElementById("filaIO")) document.getElementById("filaIO").innerText = "Nenhum";
+}
+
+// Executa assim que carregar e reforça após 100ms
+window.addEventListener('load', () => {
+    resetarInterface();
+    setTimeout(resetarInterface, 100); 
+});
 }
