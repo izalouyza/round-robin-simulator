@@ -1,6 +1,6 @@
 # Simulador Round-Robin
 
-Repositório contendo o projeto desenvolvido para a disciplina de **Sistemas Operacionais**, com foco na simulação do algoritmo de escalonamento **Round-Robin**.
+Repositório contendo o projeto desenvolvido para a disciplina de **Sistemas Operacionais**, com foco na simulação de algoritmos de escalonamento.
 
 O sistema tem como objetivo demonstrar, de forma visual e interativa, o funcionamento do escalonamento de processos, incluindo **troca de contexto**, **quantum**, **filas de execução** e **operações de entrada/saída (I/O)**.
 
@@ -32,7 +32,7 @@ O sistema tem como objetivo demonstrar, de forma visual e interativa, o funciona
 
 ## Propósito do Projeto
 
-O projeto tem como finalidade simular o comportamento do algoritmo de escalonamento **Round-Robin**, permitindo:
+O projeto tem como finalidade simular o comportamento de algoritmos de escalonamento, permitindo:
 
 - Compreender a divisão de tempo da CPU entre processos.
 - Visualizar o impacto do **quantum** na execução.
