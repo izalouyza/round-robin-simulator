@@ -5,7 +5,6 @@ Repositório contendo o projeto desenvolvido para a disciplina de **Sistemas Ope
 O sistema tem como objetivo demonstrar, de forma visual e interativa, o funcionamento do escalonamento de processos, incluindo **troca de contexto**, **quantum**, **filas de execução** e **operações de entrada/saída (I/O)**.
 
 ![Linguagem](https://img.shields.io/badge/Linguagem-JavaScript-yellow)
-![Plataforma](https://img.shields.io/badge/Plataforma-Electron-blue)
 ![Último commit](https://img.shields.io/github/last-commit/izalouyza/round-robin-simulator)
 
 ---
@@ -18,7 +17,6 @@ O sistema tem como objetivo demonstrar, de forma visual e interativa, o funciona
 - [Arquitetura do Sistema](#arquitetura-do-sistema)
 - [Estrutura de Pastas](#estrutura-de-pastas)
 - [Como Executar o Projeto](#como-executar-o-projeto)
-- [Geração do Executável](#geração-do-executável)
 
 ---
 
@@ -56,14 +54,16 @@ O foco principal é fornecer uma ferramenta **didática, visual e interativa**, 
 | Gráfico de Gantt | Timeline animada da CPU e do Disco. |
 | Controlo de Execução | Permite pausar, continuar ou executar passo a passo. |
 | Estatísticas Finais | Cálculo de tempo médio de espera e utilização de hardware. |
+| FCFS (First-Come, First-Served) | Implementação do escalonamento Primeiro-a-Chegar, Primeiro-a-Ser-Atendido. |
+| SJF (Shortest Job First) | Escalonamento baseado no menor tempo de execução do processo. |
+| Prioridades | Processos são selecionados com base em níveis de prioridade definidos. |
+| Filas Multiníveis | Organização de processos em múltiplas filas com diferentes políticas de escalonamento. |
 
 ---
 
 ## Tecnologias Utilizadas
 
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
-![Electron](https://img.shields.io/badge/Electron-47848F?style=for-the-badge&logo=electron&logoColor=white)
-![Electron Forge](https://img.shields.io/badge/Electron_Forge-000000?style=for-the-badge&logo=electron&logoColor=white)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
@@ -78,10 +78,7 @@ O sistema foi estruturado em camadas simples, separando responsabilidades entre 
   Responsável pela visualização e interação com o usuário.
 
 - **Lógica de Simulação (script.js):**  
-  Implementa o algoritmo Round-Robin, controle de filas e execução dos processos.
-
-- **Camada Desktop (main.js):**  
-  Responsável por configurar e executar a aplicação via Electron.
+ Responsável pela implementação dos algoritmos de escalonamento, controle das filas de processos e gerenciamento da execução dos processos no sistema.
 
 ---
 
@@ -93,51 +90,26 @@ round-robin-simulator/
 │   ├── script.js
 │   └── style.css
 ├── index.html
-├── main.js
-├── package-lock.json
-├── package.json
 └── .gitignore
 ```
 
 ## Como Executar o Projeto
-Existem duas formas de utilizar este projeto:
-
-### 1. Pela Versão Executável (Recomendado para Usuários)
-Se você quer apenas rodar o simulador sem precisar instalar ferramentas de programação:
-
-1. Vá até a seção [Releases](https://github.com/izalouyza/round-robin-simulator/releases) deste repositório.
-2. Baixe a pasta .zip `simulador-round-robin.zip`.
-3. Extraia a pasta e execute o instalador no seu Windows. 
-   * *Nota: Se aparecer um aviso do Windows, clique em "Mais informações" e "Executar assim mesmo".*
-4. O simulador será instalado e um atalho será criado na sua Área de Trabalho.
-
-### 2. Pelo Terminal (Para Desenvolvedores)
-Pré-requisitos
+Pré-requisitos:
 - Node.js instalado.
 
-### 1. Clonar o Repositório
-```bash
+1. Clone o repositório
+```
 git clone https://github.com/izalouyza/round-robin-simulator
 ```
-### 2. Acessar a Pasta do Projeto
-```bash
+2. Acesse a pasta do projeto
+```
 cd round-robin-simulator
 ```
-### 3. Instalar Dependências
-```bash
+3. Instale as dependências
+```
 npm install
 ```
-### 4. Executar o Simulador
-```bash
+4. Execute o simulador
+```
 npm start
-```
-
-## Geração do Executável
-Para gerar o instalador da aplicação para Windows:
-```bash
-npm run make
-```
-O executável será criado em:
-```bash
-out/make/squirrel.windows/x64/
 ```
