@@ -1,4 +1,4 @@
-# Simulador Round-Robin
+# Simulador de Algoritmos de Escalonamento
 
 Repositório contendo o projeto desenvolvido para a disciplina de **Sistemas Operacionais**, com foco na simulação de algoritmos de escalonamento.
 
